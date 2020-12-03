@@ -2,151 +2,81 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.shape.Arc?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-    <children>
-        <MenuBar VBox.vgrow="NEVER">
-            <menus>
-                <Menu mnemonicParsing="false" text="File">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="New Game" />
-                        <MenuItem mnemonicParsing="false" text="Preferences…" />
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-        <SplitPane dividerPositions="0.2505567928730512" focusTraversable="true" minHeight="400.0" prefHeight="400.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
-            <items>
-                <AnchorPane minWidth="300.0">
-                    <children>
-                  <VBox layoutX="14.0" layoutY="14.0">
-                     <children>
-                              <Label alignment="CENTER" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Info Panel" textAlignment="CENTER" wrapText="false">
-                                  <font>
-                                      <Font size="26.0" fx:id="x1" />
-                                  </font>
-                              </Label>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Laptime: 1:30.213" textAlignment="CENTER" wrapText="false">
-                           <textFill>
-                              <Color blue="0.624" green="0.624" red="0.624" fx:id="x21" />
-                           </textFill>
-                           <font>
-                              <Font size="18.0" fx:id="x11" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="48.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Laps: 32/60" textAlignment="CENTER" wrapText="false">
-                           <textFill>
-                              <Color blue="0.624" green="0.624" red="0.624" fx:id="x212" />
-                           </textFill>
-                           <font>
-                              <Font size="18.0" fx:id="x112" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="48.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Current tyres: Soft" textAlignment="CENTER" wrapText="false">
-                           <textFill>
-                              <Color blue="0.624" green="0.624" red="0.624" fx:id="x211" />
-                           </textFill>
-                           <font>
-                              <Font size="18.0" fx:id="x111" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="75.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Laps with current tyres: 8" textAlignment="CENTER" wrapText="false">
-                           <textFill>
-                              <Color blue="0.624" green="0.624" red="0.624" fx:id="x2111" />
-                           </textFill>
-                           <font>
-                              <Font size="18.0" fx:id="x1111" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox alignment="BOTTOM_LEFT" layoutX="14.0" layoutY="422.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0">
-                     <children>
-                        <Label alignment="CENTER" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Box" textAlignment="CENTER" wrapText="false">
-                           <font>
-                              <Font size="26.0" fx:id="x11" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Selected tyre: Medium" textAlignment="CENTER" wrapText="false">
-                           <textFill>
-                              <Color blue="0.624" green="0.624" red="0.624" fx:id="x211" />
-                           </textFill>
-                           <font>
-                              <Font size="18.0" fx:id="x111" />
-                           </font>
-                        </Label>
-                        <HBox>
-                           <children>
-                              <ChoiceBox fx:id="tyreSelectorPanel" prefWidth="150.0" />
-                              <Button mnemonicParsing="false" text="Set" />
-                           </children>
-                        </HBox>
-                        <Button mnemonicParsing="false" text="Pit this lap" />
-                     </children>
-                  </VBox>
-                    </children>
-                </AnchorPane>
-                <AnchorPane minWidth="400.0">
-                    <children>
-                        <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" wrapText="false" />
-                  <Arc fill="#665bfc" layoutX="478.0" layoutY="152.0" length="180.0" radiusX="100.0" radiusY="100.0" startAngle="-90.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" AnchorPane.bottomAnchor="299.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="52.0" />
-                  <Label alignment="CENTER" layoutX="390.0" layoutY="257.0" style="&#10;" text="completed laps" textAlignment="CENTER" wrapText="false" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="257.0">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="simulator.Controller">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <children>
+            <VBox alignment="CENTER" style="-fx-background-color: #0040a1;" HBox.hgrow="ALWAYS" >
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="f1sim">
                      <font>
-                        <Font size="26.0" fx:id="x12" />
+                        <Font name="Impact" size="64.0" />
                      </font>
-                  </Label>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fff2c" height="38.0" layoutX="14.0" layoutY="382.0" stroke="BLACK" strokeType="INSIDE" width="300.0" AnchorPane.bottomAnchor="131.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="382.0" />
-                  <Arc fill="#665bfc" layoutX="114.0" layoutY="152.0" length="290.0" radiusX="100.0" radiusY="100.0" startAngle="90.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="52.0" />
-                  <Label alignment="CENTER" layoutX="73.0" layoutY="257.0" style="&#10;" text="this lap" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="73.0" AnchorPane.topAnchor="257.0">
+                  </Text>
+                  <Button id="custombutton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Start" textFill="WHITE">
                      <font>
-                        <Font size="26.0" fx:id="x121" />
+                        <Font name="Comic Sans MS" size="12.0" />
                      </font>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="80.0" layoutY="382.0" style="&#10;" text="distance to 1st" textAlignment="CENTER" wrapText="false" AnchorPane.leftAnchor="80.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="250.0" layoutY="220.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Options" textFill="WHITE">
                      <font>
-                        <Font size="26.0" fx:id="x122" />
+                        <Font name="Comic Sans MS" size="12.0" />
                      </font>
-                  </Label>
-                    </children>
-                </AnchorPane>
-            </items>
-        </SplitPane>
-        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
-            <children>
-                <Label maxHeight="1.7976931348623157E308" maxWidth="-1.0" text="Dániel Miklós" HBox.hgrow="ALWAYS">
-                    <font>
-                        <Font size="11.0" fx:id="x3" />
-                    </font>
-                    <textFill>
-                        <Color blue="0.625" green="0.625" red="0.625" fx:id="x4" />
-                    </textFill>
-                </Label>
-                <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
-                <Label font="$x3" maxWidth="-1.0" text="f1sim 0.0.1a" textFill="$x4" HBox.hgrow="NEVER" />
-            </children>
-            <padding>
-                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
-            </padding>
-        </HBox>
-    </children>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="250.0" layoutY="233.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Leaderboard" textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button layoutX="260.0" layoutY="252.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="140.0" text="Exit" onMouseClicked="#exitButtonAction" textFill="WHITE" >
+                     <font>
+                        <Font name="Comic Sans MS" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Text fx:id="myname" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dániel Miklós" >
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Text>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+  </children>
 </VBox>
