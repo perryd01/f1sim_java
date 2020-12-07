@@ -14,8 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.Label?>
-<VBox prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="simulator.Controller">
+<VBox prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="simulator.controller.GamePanelController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -36,7 +35,7 @@
          <children>
             <VBox alignment="TOP_CENTER">
                <children>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mercedes #18" VBox.vgrow="ALWAYS">
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mercedes #18" VBox.vgrow="ALWAYS" fx:id="carName">
                      <font>
                         <Font size="30.0" />
                      </font>
@@ -44,32 +43,32 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </VBox.margin>
                   </Text>
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Elapsed time: ">
+                  <Text fx:id="elapsedTime" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Elapsed time: ">
                      <font>
                         <Font size="26.0" />
                      </font>
                   </Text>
-                  <Text fx:id="laptime" fill="WHITE"  layoutX="237.0" layoutY="52.0"  text="Laptime: 1:30.302" >
+                  <Text fx:id="laptime" fill="WHITE" layoutX="237.0" layoutY="52.0" text="Laptime: 0:00.000">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" layoutX="215.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Laps: 4/60">
+                  <Text fx:id="laps" fill="WHITE" layoutX="215.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Laps: 0/0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" layoutX="276.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current place: 4">
+                  <Text fx:id="place" fill="WHITE" layoutX="276.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current place: 0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" layoutX="247.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tyre selected: Hard">
+                  <Text fx:id="currentTyre" fill="WHITE" layoutX="247.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No tyre selected yet">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Text>
-                  <Button mnemonicParsing="false" text="Pit this lap!">
+                  <Button fx:id="pitButton" mnemonicParsing="false" onMouseClicked="#pitButtonAction" text="Pit this lap!">
                      <font>
                         <Font size="22.0" />
                      </font>
@@ -90,7 +89,7 @@
                            <children>
                               <HBox alignment="CENTER">
                                  <children>
-                                    <Group>
+                                    <Group fx:id="hardTyre" onMouseClicked="#setHard">
                                        <children>
                                           <Circle radius="60.0" stroke="BLACK" strokeType="INSIDE" />
                                           <Circle fill="WHITE" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
@@ -101,7 +100,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </Group>
-                                    <Group layoutX="70.0" layoutY="70.0">
+                                    <Group fx:id="mediumTyre" layoutX="70.0" layoutY="70.0" onMouseClicked="#setMedium">
                                        <children>
                                           <Circle radius="60.0" stroke="BLACK" strokeType="INSIDE" />
                                           <Circle fill="#f6ff00" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
@@ -112,7 +111,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </Group>
-                                    <Group layoutX="190.0" layoutY="70.0">
+                                    <Group fx:id="softTyre" layoutX="190.0" layoutY="70.0" onMouseClicked="#setSoft">
                                        <children>
                                           <Circle radius="60.0" stroke="BLACK" strokeType="INSIDE" />
                                           <Circle fill="RED" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
@@ -159,6 +158,16 @@
                   </VBox>
                </children>
             </VBox>
+            <Button mnemonicParsing="false" text="Start race" StackPane.alignment="BOTTOM_RIGHT" onMouseClicked="#raceStart" fx:id="raceStartButton">
+               <StackPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </StackPane.margin>
+            </Button>
+            <Button layoutX="733.0" layoutY="484.0" mnemonicParsing="false" text="Back" StackPane.alignment="BOTTOM_LEFT" onMouseClicked="#backToMenuEventMouse">
+               <StackPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </StackPane.margin>
+            </Button>
          </children>
       </StackPane>
   </children>
