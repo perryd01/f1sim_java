@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>simulator</OriginalElement>
+  <nodes>
+    <node x="0.0" y="1723.0">simulator.controller.LeaderboardPanelController</node>
+    <node x="32.61661706349207" y="1257.0">simulator.Main</node>
+    <node x="383.6166170634921" y="1201.5">simulator.controller.MenuPanelController</node>
+    <node x="1279.6759259259259" y="1701.0">simulator.gamelogic.CarTest</node>
+    <node x="879.6999503968254" y="534.0">simulator.GameTick</node>
+    <node x="197.61661706349207" y="1257.0">simulator.LeaderboardData</node>
+    <node x="190.75" y="534.0">simulator.SceneController</node>
+    <node x="676.6166170634921" y="959.0">simulator.controller.GamePanelController</node>
+    <node x="1095.6999503968254" y="324.0">simulator.gamelogic.Car</node>
+    <node x="676.8666170634921" y="545.0">simulator.gamelogic.TyreTest</node>
+    <node x="947.5" y="0.0">simulator.gamelogic.Tyre</node>
+    <node x="795.9159226190476" y="1722.5">simulator.Game</node>
+    <node x="1030.9678075396826" y="1156.5">simulator.gamelogic.Track</node>
+    <node x="1092.6759259259259" y="1745.0">simulator.gamelogic.TrackTest</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="simulator.gamelogic.CarTest" target="simulator.gamelogic.Car">
+      <point x="33.59999999999991" y="-104.5" />
+      <point x="1396.3395833333334" y="929.0" />
+      <point x="1305.6999503968254" y="929.0" />
+      <point x="98.0" y="292.5" />
+    </edge>
+    <edge source="simulator.Main" target="simulator.SceneController">
+      <point x="0.0" y="-38.0" />
+      <point x="105.11661706349207" y="939.0" />
+      <point x="279.25" y="939.0" />
+      <point x="-29.5" y="82.5" />
+    </edge>
+    <edge source="simulator.Game" target="simulator.LeaderboardData">
+      <point x="-95.55555555555554" y="-83.0" />
+      <point x="807.860367063492" y="1681.0" />
+      <point x="322.1166170634921" y="1681.0" />
+      <point x="41.5" y="38.0" />
+    </edge>
+    <edge source="simulator.gamelogic.Track" target="simulator.gamelogic.Tyre">
+      <point x="-65.0" y="-138.5" />
+      <point x="1069.9678075396826" y="939.0" />
+      <point x="1085.1999503968254" y="939.0" />
+      <point x="1085.1999503968254" y="304.0" />
+      <point x="1069.5" y="304.0" />
+      <point x="0.0" y="127.0" />
+    </edge>
+    <edge source="simulator.controller.LeaderboardPanelController" target="simulator.SceneController">
+      <point x="-63.5" y="-82.5" />
+      <point x="63.5" y="1681.0" />
+      <point x="22.116617063492072" y="1681.0" />
+      <point x="22.116617063492072" y="929.0" />
+      <point x="220.25" y="929.0" />
+      <point x="-88.5" y="82.5" />
+    </edge>
+    <edge source="simulator.controller.GamePanelController" target="simulator.GameTick">
+      <point x="92.66666666666663" y="-336.0" />
+      <point x="908.2832837301587" y="939.0" />
+      <point x="912.1999503968254" y="939.0" />
+      <point x="-65.0" y="82.5" />
+    </edge>
+    <edge source="simulator.controller.LeaderboardPanelController" target="simulator.LeaderboardData">
+      <point x="63.5" y="-82.5" />
+      <point x="190.5" y="1681.0" />
+      <point x="239.11661706349207" y="1681.0" />
+      <point x="-41.5" y="38.0" />
+    </edge>
+    <edge source="simulator.controller.GamePanelController" target="simulator.Game">
+      <point x="92.66666666666674" y="336.0" />
+      <point x="908.2832837301588" y="1681.0" />
+      <point x="903.4159226190476" y="1681.0" />
+      <point x="0.0" y="-83.0" />
+    </edge>
+    <edge source="simulator.controller.GamePanelController" target="simulator.SceneController">
+      <point x="-92.66666666666674" y="-336.0" />
+      <point x="722.9499503968253" y="929.0" />
+      <point x="397.25" y="929.0" />
+      <point x="88.5" y="82.5" />
+    </edge>
+    <edge source="simulator.Game" target="simulator.controller.GamePanelController">
+      <point x="-47.777777777777715" y="-83.0" />
+      <point x="855.6381448412699" y="1661.0" />
+      <point x="722.9499503968254" y="1661.0" />
+      <point x="-92.66666666666663" y="336.0" />
+    </edge>
+    <edge source="simulator.gamelogic.Track" target="simulator.gamelogic.Car">
+      <point x="-39.0" y="-138.5" />
+      <point x="1095.9678075396826" y="939.0" />
+      <point x="1109.6999503968254" y="939.0" />
+      <point x="-98.0" y="292.5" />
+    </edge>
+    <edge source="simulator.Game" target="simulator.GameTick">
+      <point x="23.888888888888914" y="-83.0" />
+      <point x="927.3048115079365" y="1651.0" />
+      <point x="977.1999503968254" y="1651.0" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="simulator.gamelogic.CarTest" target="simulator.gamelogic.Track">
+      <point x="-33.59999999999991" y="-104.5" />
+      <point x="1330.075925925926" y="1661.0" />
+      <point x="1224.1106646825397" y="1661.0" />
+      <point x="89.14285714285711" y="138.5" />
+    </edge>
+    <edge source="simulator.controller.MenuPanelController" target="simulator.SceneController">
+      <point x="0.0" y="-93.5" />
+      <point x="519.6166170634921" y="939.0" />
+      <point x="338.25" y="939.0" />
+      <point x="29.5" y="82.5" />
+    </edge>
+    <edge source="simulator.gamelogic.Car" target="simulator.gamelogic.Tyre">
+      <point x="-74.66666666666674" y="-292.5" />
+      <point x="1133.0332837301587" y="304.0" />
+      <point x="1096.611111111111" y="304.0" />
+      <point x="27.111111111111086" y="127.0" />
+    </edge>
+    <edge source="simulator.gamelogic.Car" target="simulator.gamelogic.Track">
+      <point x="42.0" y="292.5" />
+      <point x="1249.6999503968254" y="939.0" />
+      <point x="1225.9678075396826" y="939.0" />
+      <point x="91.0" y="-138.5" />
+    </edge>
+    <edge source="simulator.gamelogic.TyreTest" target="simulator.gamelogic.Tyre">
+      <point x="32.0" y="-71.5" />
+      <point x="772.8666170634921" y="294.0" />
+      <point x="1015.2777777777778" y="294.0" />
+      <point x="-54.22222222222217" y="127.0" />
+    </edge>
+    <edge source="simulator.Game" target="simulator.gamelogic.Tyre">
+      <point x="-71.66666666666663" y="-83.0" />
+      <point x="831.749255952381" y="1671.0" />
+      <point x="666.1166170634921" y="1671.0" />
+      <point x="666.1166170634921" y="274.0" />
+      <point x="961.0555555555557" y="274.0" />
+      <point x="-108.44444444444434" y="127.0" />
+    </edge>
+    <edge source="simulator.controller.GamePanelController" target="simulator.gamelogic.Tyre">
+      <point x="0.0" y="-336.0" />
+      <point x="815.6166170634921" y="304.0" />
+      <point x="1042.388888888889" y="304.0" />
+      <point x="-27.111111111111086" y="127.0" />
+    </edge>
+    <edge source="simulator.Game" target="simulator.gamelogic.Track">
+      <point x="47.77777777777783" y="-83.0" />
+      <point x="951.1937003968254" y="1661.0" />
+      <point x="1045.8249503968254" y="1661.0" />
+      <point x="-89.14285714285711" y="138.5" />
+    </edge>
+    <edge source="simulator.gamelogic.CarTest" target="simulator.gamelogic.Tyre">
+      <point x="67.20000000000005" y="-104.5" />
+      <point x="1430.875925925926" y="1681.0" />
+      <point x="1407.3395833333334" y="1681.0" />
+      <point x="1407.3395833333334" y="274.0" />
+      <point x="1177.9444444444446" y="274.0" />
+      <point x="108.44444444444457" y="127.0" />
+    </edge>
+    <edge source="simulator.gamelogic.Track" target="simulator.GameTick">
+      <point x="-91.0" y="-138.5" />
+      <point x="1043.9678075396826" y="939.0" />
+      <point x="1042.1999503968254" y="939.0" />
+      <point x="65.0" y="82.5" />
+    </edge>
+    <edge source="simulator.gamelogic.TrackTest" target="simulator.gamelogic.Track">
+      <point x="41.75" y="-60.5" />
+      <point x="1217.9259259259259" y="1681.0" />
+      <point x="1164.6820932539683" y="1681.0" />
+      <point x="29.71428571428578" y="138.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.3823910228744065" x="777.5" y="1148.5000000000002" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

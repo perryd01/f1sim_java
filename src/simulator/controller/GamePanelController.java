@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import simulator.Game;
+import simulator.GameTick;
 import simulator.SceneController;
 import simulator.gamelogic.Tyre;
 
@@ -41,10 +42,6 @@ public class GamePanelController {
         int sec = (int) (laptime - min*60);
         int ms =  (int) (((laptime - min*60) - sec) * 1000);
         this.laptime.setText("Laptime: " + min + ":" + sec + ":" + ms);
-    }
-
-    private void setLaptime(String lt){
-        laptime.setText("Laptime: " + lt);
     }
 
     /**
@@ -82,29 +79,21 @@ public class GamePanelController {
      */
     public void setCarName(String cn){ this.carName.setText(cn);}
 
-    /**
-     * sets tyre on GUI
-     * @param current current tyre on the car
-     * @param selected selected tyre for the next pitting
-     */
-    public void setCurrentTyre(String current, String selected){this.currentTyre.setText("curr: "+ current + " - selected: " + selected);}
-
 
     /**
      * Changes scene to the Menu, and resets gamestate
-     * @param actionEvent
+     * @param actionEvent backToMenu Button Event
      */
     public void backToMenuEvent(ActionEvent actionEvent) {
         SceneController.activate("menu");
-        reset();
+        resetGUI();
     }
 
 
     /**
      * Initalizes GUI in GamePanel
-     * @throws Exception
      */
-    @FXML public void initialize() throws Exception {
+    @FXML public void initialize() {
         laptime.setText("Laptime: 0000000");
         pitButton.setDisable(true);
 
@@ -147,7 +136,7 @@ public class GamePanelController {
      * @param mouseEvent pit button click
      */
     public void pitButtonAction(MouseEvent mouseEvent) {
-        if(selectedTyre == null) {currentTyre.setText("Choose a tyre first"); return;};
+        if(selectedTyre == null) {currentTyre.setText("Choose a tyre first"); return;}
 
         prevLapNumber = laps.getText();
         pitButton.setText("Pitting next lap!");
@@ -159,7 +148,7 @@ public class GamePanelController {
     /**
      * resets GUI's tyre and pitting part
      */
-    public void reset(){
+    public void resetGUI(){
         pitButton.setDisable(true);
         pitButton.setStyle(null);
         currentTyre.setText("tyre not selected");
@@ -170,20 +159,21 @@ public class GamePanelController {
     /**
      * Changes scene to menu and resets current panel.
      * @param mouseEvent 'Back' button click event
-     * @throws Exception
      */
-    public void backToMenuEventMouse(MouseEvent mouseEvent) throws Exception {
+    public void backToMenuEventMouse(MouseEvent mouseEvent) {
         SceneController.activate("menu");
-        reset();
-        game.reinit();
+        resetGUI();
+        if(GameTick.guitickerRunning && GameTick.gametickerRunning) {
+            GameTick.stopAll();
+            game.reInit();
+        }
     }
 
     /**
      * Creates a game and starts it
      * @param mouseEvent Start button click event
-     * @throws Exception
      */
-    public void raceStart(MouseEvent mouseEvent) throws Exception {
+    public void raceStart(MouseEvent mouseEvent) {
         game = new Game();
         pitButton.setDisable(false);
         raceStartButton.setDisable(true);
@@ -195,7 +185,7 @@ public class GamePanelController {
      * Reset's pitting part in GUI
      */
     public void pitReset() {
-        if(prevLapNumber != laps.getText() && prevLapNumber != null) {
+        if(prevLapNumber != null && !prevLapNumber.equals(laps.getText())) {
             pitButton.setStyle(null);
             //pitButton.setText("Pit this lap");
             pitButton.setDisable(false);

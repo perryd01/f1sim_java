@@ -4,10 +4,11 @@ import simulator.GameTick;
 
 import java.util.*;
 
+
 /**
  * Track class the Cars are racing on.
  */
-public class Track {
+public class Track{
     /**
      * Approximate minimum laptime on track
      */
@@ -19,15 +20,12 @@ public class Track {
     /**
      * Array to store Cars
      */
-    public ArrayList<Car> participantCars = new ArrayList<Car>();
+    public final ArrayList<Car> participantCars = new ArrayList<>();
     /**
      * Laps needed to complete on track
      */
     private final int lapNum;
-    /**
-     * is the race started
-     */
-    private final boolean started = false;
+
     /**
      * Copy of the leading car
      */
@@ -38,10 +36,9 @@ public class Track {
      * @param minimumLaptime Approximate minimum laptime on track
      * @param name Name of track
      * @param lapNumber Laps needed to complete on track
-     * @throws Exception
      */
-    public Track(double minimumLaptime, String name, int lapNumber) throws Exception {
-        if (lapNumber < 1 || minimumLaptime < 5) throw new Exception("Wrong input");
+    public Track(double minimumLaptime, String name, int lapNumber) {
+        if (lapNumber < 1 || minimumLaptime < 5) throw new IllegalArgumentException("Wrong lapnumber or minimumLaptime at constructor");
         Track.minimumLaptime = minimumLaptime;
         Track.name = name;
         this.lapNum = lapNumber;
@@ -52,31 +49,6 @@ public class Track {
      */
     public int getLapNum() {
         return this.lapNum;
-    }
-
-    public void start() throws InterruptedException {
-        if (started == true) throw new Error("Already started");
-
-        for (Car car : participantCars) {
-            System.out.println(car.getCarName() + " starts on " + car.getTyre());
-        }
-
-        for (int i = 0; i < this.lapNum; i++) {
-            Thread.sleep(1000);
-            for (int j = 0; j < participantCars.size(); j++) {
-                participantCars.get(j).oneLap();
-            }
-        }
-    }
-
-    private void finishAll() {
-        for (int i = 0; i < participantCars.size(); i++) {
-            participantCars.get(i).finish();
-        }
-    }
-
-    private void finishCars() {
-
     }
 
     /**
@@ -129,22 +101,16 @@ public class Track {
                     }
                 }
 
-
                 firstCar = participantCars.get(carId);
                 if (firstCar.getLaps() == lapNum) {
                     System.out.println("Race won");
-                    finishCars();
-                    //trackPoller.cancel();
                     GameTick.gameticker.cancel();
-
-
                     System.out.println(firstCar.getCarName() + "!!!!!!!!!!!!!");
                 }
 
             }
         };
 
-        //trackPoller.schedule(task, 1000, (long) 10);
         GameTick.gameticker.schedule(task, 1, 100);
 
     }
@@ -155,7 +121,7 @@ public class Track {
      * @param carNum Number of cars
      */
     public void addRandomCars(int carNum) {
-        Stack<String> carnames = new Stack<String>();
+        Stack<String> carnames = new Stack<>();
         String[] carnamesArray = {"Mercedes1", "Mercedes2", "Williams1", "Williams2", "Haas1", "Haas2", "Racing Point1", "Racing Point2", "Mclaren1", "Mclaren2", "Renault1", "Renault2", "Redbull1", "Redbull2", "Ferrari1", "Ferrari2", "Alfa Romeo1", "ALfa Romeo2", "AlfaTauri1", "AlfaTauri2"};
         for (String car : carnamesArray) {
             carnames.push(car);
@@ -174,7 +140,7 @@ public class Track {
         for (Car car : participantCars) {
             car.cancelTimer();
         }
-        participantCars.removeAll(participantCars);
+        participantCars.clear();
         firstCar = null;
     }
 

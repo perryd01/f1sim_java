@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>simulator</OriginalElement>
+  <nodes>
+    <node x="528.8784722222222" y="604.0">simulator.Main</node>
+    <node x="199.10218253968253" y="627.0">simulator.controller</node>
+    <node x="134.531746031746" y="0.0">simulator.GameTick</node>
+    <node x="237.37847222222217" y="215.0">simulator.LeaderboardData</node>
+    <node x="424.3784722222222" y="378.5">simulator.SceneController</node>
+    <node x="50.0" y="238.0">simulator.gamelogic</node>
+    <node x="102.1582341269841" y="378.0">simulator.Game</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="simulator.controller" target="simulator.SceneController">
+      <point x="74.57142857142856" y="-15.0" />
+      <point x="360.6736111111111" y="584.0" />
+      <point x="483.3784722222222" y="584.0" />
+      <point x="-59.0" y="82.5" />
+    </edge>
+    <edge source="simulator.Main" target="simulator.SceneController">
+      <point x="0.0" y="-38.0" />
+      <point x="59.0" y="82.5" />
+    </edge>
+    <edge source="simulator.Game" target="simulator.LeaderboardData">
+      <point x="89.58333333333337" y="-83.0" />
+      <point x="299.24156746031747" y="358.0" />
+      <point x="278.8784722222222" y="358.0" />
+      <point x="-41.5" y="38.0" />
+    </edge>
+    <edge source="simulator.controller" target="simulator.LeaderboardData">
+      <point x="24.85714285714289" y="-15.0" />
+      <point x="310.9593253968254" y="564.0" />
+      <point x="361.8784722222222" y="564.0" />
+      <point x="41.5" y="38.0" />
+    </edge>
+    <edge source="simulator.Game" target="simulator.GameTick">
+      <point x="53.75" y="-83.0" />
+      <point x="263.4082341269841" y="348.0" />
+      <point x="226.49999999999997" y="348.0" />
+      <point x="226.49999999999997" y="190.0" />
+      <point x="232.031746031746" y="190.0" />
+      <point x="0.0" y="82.5" />
+    </edge>
+    <edge source="simulator.controller" target="simulator.Game">
+      <point x="-49.714285714285666" y="-15.0" />
+      <point x="236.38789682539687" y="574.0" />
+      <point x="137.9915674603174" y="574.0" />
+      <point x="-71.66666666666667" y="83.0" />
+    </edge>
+    <edge source="simulator.controller" target="simulator.gamelogic">
+      <point x="-74.57142857142853" y="-15.0" />
+      <point x="211.53075396825398" y="584.0" />
+      <point x="91.6582341269841" y="584.0" />
+      <point x="91.6582341269841" y="338.0" />
+      <point x="133.0" y="338.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="simulator.gamelogic" target="simulator.gamelogic">
+      <point x="-18.444444444444457" y="15.0" />
+      <point x="114.55555555555554" y="318.0" />
+      <point x="0.0" y="318.0" />
+      <point x="0.0" y="241.75" />
+      <point x="-83.0" y="-11.25" />
+    </edge>
+    <edge source="simulator.controller" target="simulator.GameTick">
+      <point x="49.71428571428572" y="-15.0" />
+      <point x="335.81646825396825" y="574.0" />
+      <point x="413.8784722222222" y="574.0" />
+      <point x="413.8784722222222" y="190.0" />
+      <point x="297.031746031746" y="190.0" />
+      <point x="65.0" y="82.5" />
+    </edge>
+    <edge source="simulator.gamelogic" target="simulator.GameTick">
+      <point x="0.0" y="-15.0" />
+      <point x="133.0" y="190.0" />
+      <point x="167.031746031746" y="190.0" />
+      <point x="-65.0" y="82.5" />
+    </edge>
+    <edge source="simulator.Game" target="simulator.gamelogic">
+      <point x="-89.58333333333334" y="-83.0" />
+      <point x="120.07490079365076" y="348.0" />
+      <point x="151.44444444444446" y="348.0" />
+      <point x="18.444444444444457" y="15.0" />
+    </edge>
+    <edge source="simulator.Game" target="simulator.controller">
+      <point x="71.66666666666669" y="83.0" />
+      <point x="281.3249007936508" y="584.0" />
+      <point x="286.10218253968253" y="584.0" />
+      <point x="0.0" y="-15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9" x="309.3957431457429" y="388.61544011543975" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

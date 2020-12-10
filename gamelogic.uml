@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>simulator.gamelogic</OriginalElement>
+  <nodes>
+    <node x="111.43831168831167" y="1276.0">simulator.gamelogic.CarTest</node>
+    <node x="188.5" y="314.0">simulator.gamelogic.Car</node>
+    <node x="234.1818181818182" y="949.0">simulator.gamelogic.Track</node>
+    <node x="319.82142857142856" y="1320.0">simulator.gamelogic.TrackTest</node>
+    <node x="36.5" y="535.0">simulator.gamelogic.TyreTest</node>
+    <node x="117.52694805194807" y="0.0">simulator.gamelogic.Tyre</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="simulator.gamelogic.Car" target="simulator.gamelogic.Tyre">
+      <point x="75.99999999999997" y="-292.5" />
+      <point x="378.5" y="294.0" />
+      <point x="312.38409090909084" y="294.0" />
+      <point x="70.85714285714278" y="127.0" />
+    </edge>
+    <edge source="simulator.gamelogic.Car" target="simulator.gamelogic.Track">
+      <point x="99.74999999999997" y="292.5" />
+      <point x="402.25" y="929.0" />
+      <point x="400.7532467532468" y="929.0" />
+      <point x="60.5714285714286" y="-138.5" />
+    </edge>
+    <edge source="simulator.gamelogic.TyreTest" target="simulator.gamelogic.Tyre">
+      <point x="33.0" y="-71.5" />
+      <point x="135.5" y="294.0" />
+      <point x="206.09837662337662" y="294.0" />
+      <point x="-35.428571428571445" y="127.0" />
+    </edge>
+    <edge source="simulator.gamelogic.CarTest" target="simulator.gamelogic.Car">
+      <point x="0.0" y="-104.5" />
+      <point x="197.43831168831167" y="929.0" />
+      <point x="231.25" y="929.0" />
+      <point x="-71.25" y="292.5" />
+    </edge>
+    <edge source="simulator.gamelogic.Track" target="simulator.gamelogic.Tyre">
+      <point x="90.85714285714288" y="-138.5" />
+      <point x="431.038961038961" y="929.0" />
+      <point x="427.0" y="929.0" />
+      <point x="427.0" y="284.0" />
+      <point x="347.8126623376623" y="284.0" />
+      <point x="106.28571428571422" y="127.0" />
+    </edge>
+    <edge source="simulator.gamelogic.CarTest" target="simulator.gamelogic.Tyre">
+      <point x="-68.80000000000001" y="-104.5" />
+      <point x="128.63831168831166" y="1251.0" />
+      <point x="26.0" y="1251.0" />
+      <point x="26.0" y="274.0" />
+      <point x="135.2412337662338" y="274.0" />
+      <point x="-106.28571428571428" y="127.0" />
+    </edge>
+    <edge source="simulator.gamelogic.Track" target="simulator.gamelogic.Car">
+      <point x="-90.85714285714283" y="-138.5" />
+      <point x="249.32467532467535" y="929.0" />
+      <point x="259.75" y="929.0" />
+      <point x="-42.75" y="292.5" />
+    </edge>
+    <edge source="simulator.gamelogic.TrackTest" target="simulator.gamelogic.Track">
+      <point x="42.75" y="-60.5" />
+      <point x="448.07142857142856" y="1251.0" />
+      <point x="419.68181818181813" y="1251.0" />
+      <point x="79.5" y="138.5" />
+    </edge>
+    <edge source="simulator.gamelogic.CarTest" target="simulator.gamelogic.Track">
+      <point x="68.80000000000001" y="-104.5" />
+      <point x="266.2383116883117" y="1251.0" />
+      <point x="313.6818181818182" y="1251.0" />
+      <point x="-26.5" y="138.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.48870431893687694" x="404.94453644277746" y="798.4192235543867" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -48,18 +48,16 @@ public class Tyre {
      * @param random used to generate random tyre for bots
      */
     public Tyre(boolean random){
-        String[] tyretypes = {"Soft", "Medium", "Hard"};
+        String[] tyreTypes = {"Soft", "Medium", "Hard"};
         if(!random) throw new IllegalArgumentException();
 
         this.setLaps(new Random().nextInt(5));
-        this.setTyre(tyretypes[new Random().nextInt(3)]);
+        this.setTyre(tyreTypes[new Random().nextInt(3)]);
     }
 
-
-    public Tyre(){
-        this.setLaps(2);
-        this.setTyre("Soft");
+    public Tyre() {
     }
+
 
     /**
      * Sets Tyre
@@ -132,11 +130,7 @@ public class Tyre {
      * @return  if Tyre String parameter is correct
      */
     private boolean allowedTyre(String t) {
-        if (t == "Hard" || t == "Medium" || t == "Soft") {
-            return true;
-        } else {
-            return false;
-        }
+        return t.equals("Hard") || t.equals("Medium") || t.equals("Soft");
     }
 
     /**
