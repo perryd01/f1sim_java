@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Car {
+public class Car{
     private final String name;
     private final int quickness;
     private Tyre tyre;
@@ -13,7 +13,6 @@ public class Car {
     private double totalTime = 0;
     private int lapsToComplete;
     private boolean finished = false;
-    private boolean pitThisLap = false;
     private int pittingAt;
     private int position;
 
@@ -50,15 +49,12 @@ public class Car {
         this.quickness = random.nextInt(2) + 1;
     }
 
-
-
     public void oneLap() {
         this.laps++;
         tyre.incLaps();
         this.updateLaptime();
 
 
-        //System.out.println(this.getLaptimeString());
         System.out.println(this.name + " " + this.laptime + "\t" + this.laps + "\t" + this.totalTime);
     }
 
@@ -94,17 +90,8 @@ public class Car {
         if(Car.this.laps == 0) Car.this.laptime = 90;
         timer.schedule(task, (long) (Car.this.laptime/20*1000), (long) (Car.this.laptime/20*1000));
 
-    };
-
-
-
-
-    public void requestPit(){
-        pitThisLap = true;
     }
 
-    private void addPitTime(){
-    }
 
     public void pit(String t) {
         resetTimer();
@@ -186,10 +173,6 @@ public class Car {
      */
     public boolean isFinished(){return finished;}
 
-    public int getPittingAt() {
-        return pittingAt;
-    }
-
     /**
      * Updates Car's laptime by generating one and adding the value to the total time.
      */
@@ -205,10 +188,6 @@ public class Car {
     private void updateLaptime(double lt) {
         this.laptime = lt;
         this.totalTime += this.laptime;
-    }
-
-    private String getLaptimeString() {
-        return (int) this.laptime / 60.0 + ":" + (this.laptime - ((int) this.laptime / 60) * 60);
     }
 
     /**
@@ -227,17 +206,16 @@ public class Car {
         double laptime = Track.minimumLaptime;
         double slowness = t.getSlownessMultiplier();
         double durability;
-        if (t.getTyre() == "Soft") {
+        if (t.getTyre().equals("Soft")) {
             durability = -21;
-        } else if (t.getTyre() == "Medium") {
+        } else if (t.getTyre().equals("Medium")) {
             durability = -27;
         } else {
             durability = -30;
         }
         //System.out.println(((Math.PI / 2) + Math.atan(durability + t.getLaps() )));
-        double magic = (1 + (Math.PI / 2) + Math.atan(durability + t.getLaps()));
         laptime = laptime * slowness * (1 + ((Math.PI / 2) + Math.atan(durability + t.getLaps())) / 5);
-        laptime -= this.quickness / 3;
+        laptime -= this.quickness / 3.0;
         if (l == 0) laptime += 10;
         if (new Random().nextInt(5) == 1) laptime += 1;
 
